@@ -1,6 +1,7 @@
 
 import React, { useRef, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
+import {Scene1} from './Loader1.js'
 
 export function Box(props) {
   // This reference will give us direct access to the mesh
@@ -32,8 +33,9 @@ function App() {
   <Canvas>
     <ambientLight />
     <pointLight position={[10, 10, 10]} />
-    <Box position={[-1.2, 0, 0]} />
-    <Box position={[1.2, 0, 0]} />
+    {/* <Box position={[-1.2, 0, 0]} /> */}
+    {/* <Box position={[1.2, 0, 0]} /> */}
+    <Scene1 />
   </Canvas>
   </div>
   );
