@@ -1,6 +1,7 @@
 
 import React, { useRef, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
+import { OrbitControls } from '@react-three/drei'
 import {Scene1} from './Loader1.js'
 
 export function Box(props) {
@@ -31,7 +32,7 @@ function App() {
 
    
   <Canvas>
-    <ambientLight />
+    <OrbitControls />
     <pointLight position={[10, 10, 10]} />
     {/* <Box position={[-1.2, 0, 0]} /> */}
     {/* <Box position={[1.2, 0, 0]} /> */}
