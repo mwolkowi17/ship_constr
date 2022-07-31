@@ -3,6 +3,7 @@ import React, { useRef, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import {Scene1} from './Loader1.js'
+import { AmbientLight } from 'three'
 
 export function Box(props) {
   // This reference will give us direct access to the mesh
@@ -33,7 +34,10 @@ function App() {
    
   <Canvas>
     <OrbitControls />
+    
     <pointLight position={[10, 10, 10]} />
+    <pointLight position={[-10, 10, 10]} />
+    <pointLight position={[0, -10, -10]} />
     {/* <Box position={[-1.2, 0, 0]} /> */}
     {/* <Box position={[1.2, 0, 0]} /> */}
     <Scene1 />
