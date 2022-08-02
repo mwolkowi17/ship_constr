@@ -4,6 +4,7 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import {Scene1} from './Loader1.js'
 import { AmbientLight } from 'three'
+import { ModelD } from './Loader2.js'
 
 export function Box(props) {
   // This reference will give us direct access to the mesh
@@ -40,7 +41,8 @@ function App() {
     <pointLight position={[0, -10, -10]} />
     {/* <Box position={[-1.2, 0, 0]} /> */}
     {/* <Box position={[1.2, 0, 0]} /> */}
-    <Scene1 />
+    {/* <Scene1 /> */}
+    <ModelD />
   </Canvas>
   </div>
   );
