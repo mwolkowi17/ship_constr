@@ -42,16 +42,17 @@ export function ModelD(props) {
       {/* <button onClick={(event) => show()}>show construction</button> */}
 
       {/* //to change */}
+      <animated.mesh  rotation={rotation1} scale={nodes.BLOCK_1.scale} onClick={() => setActive(!active)} ref={myMesh}>
       <primitive castShadow receiveShadow object={nodes.BLOCK_1}
-        scale={nodes.BLOCK_1.scale}
-        translateOnAxis={nodes.BLOCK_1.translation}
-        rotation={[0,0,0]}
-        onClick={() => setActive(!active)}
-        ref={myMesh}
+       
+        
+        
+        
         //  onClick={() => console.log('clicked')}
       //onPointerOver={() => setHovered(true)}
       // onPointerOut={() => setHovered(false)}
       />
+      </animated.mesh>
 
       <primitive castShadow receiveShadow object={nodes.BLOCK_2}
         scale={nodes.BLOCK_2.scale}
