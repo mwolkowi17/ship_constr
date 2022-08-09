@@ -7,7 +7,7 @@ export function ModelD(props) {
   const { nodes } = useGLTF('/Ship1.gltf')
   const myMesh = useRef();
   const [active, setActive] = useState(false)
-  const { rotation1, position1 } = useSpring({ rotation: active ? nodes.BLOCK_1.rotation : [0, Math.PI / 2, 0], config: { duration: 3000 } })
+  const { rotation1 } = useSpring({ rotation: active ? [0,0,0] : [0, Math.PI / 2, 0], config: { duration: 3000 } })
 
   function show() {
     console.log('clicked');
@@ -45,10 +45,10 @@ export function ModelD(props) {
       <primitive castShadow receiveShadow object={nodes.BLOCK_1}
         scale={nodes.BLOCK_1.scale}
         translateOnAxis={nodes.BLOCK_1.translation}
-        rotation={rotation1}
-        //onClick={() => setActive(!active)}
+        rotation={[0,0,0]}
+        onClick={() => setActive(!active)}
         ref={myMesh}
-         onClick={() => console.log('clicked')}
+        //  onClick={() => console.log('clicked')}
       //onPointerOver={() => setHovered(true)}
       // onPointerOut={() => setHovered(false)}
       />
