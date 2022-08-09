@@ -10,13 +10,11 @@ import { ModelD } from './Loader2.js'
 
 function App() {
 
-   function show(){
-    console.log('clicked');
-   }
+  
   return (
     <div>
 
-   <button onClick={(event) => show()}>show construction</button>
+   
   <Canvas>
     <OrbitControls />
     

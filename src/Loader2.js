@@ -1,10 +1,17 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { useGLTF } from '@react-three/drei'
+import { useSpring, animated } from '@react-spring/three'
 
 export function ModelD(props) {
   const group = useRef()
   const { nodes } = useGLTF('/Ship1.gltf')
+  const myMesh = useRef();
+  const [active, setActive] = useState(false)
+  const { rotation1, position1 } = useSpring({ rotation: active ? nodes.BLOCK_1.rotation : [0, Math.PI / 2, 0], config: { duration: 3000 } })
 
+  function show() {
+    console.log('clicked');
+  }
   return (
     <group ref={group} {...props} dispose={null}>
       <primitive castShadow receiveShadow object={nodes.BOW}
@@ -32,16 +39,18 @@ export function ModelD(props) {
         onPointerOver={() => setHovered(true)}
         onPointerOut={() => setHovered(false)}*/
       />
+      {/* <button onClick={(event) => show()}>show construction</button> */}
 
-
-
+      {/* //to change */}
       <primitive castShadow receiveShadow object={nodes.BLOCK_1}
         scale={nodes.BLOCK_1.scale}
         translateOnAxis={nodes.BLOCK_1.translation}
-        rotation={nodes.BLOCK_1.rotation}
-      /* onClick={() => console.log('clicked')}
-        onPointerOver={() => setHovered(true)}
-        onPointerOut={() => setHovered(false)}*/
+        rotation={rotation1}
+        //onClick={() => setActive(!active)}
+        ref={myMesh}
+         onClick={() => console.log('clicked')}
+      //onPointerOver={() => setHovered(true)}
+      // onPointerOut={() => setHovered(false)}
       />
 
       <primitive castShadow receiveShadow object={nodes.BLOCK_2}
